@@ -1,0 +1,60 @@
+[33mcommit 3decee50b071a63985577e26fe43e29ba1eee537[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Ilvif666 <ilvif666@gmail.com>
+Date:   Tue Feb 5 20:55:25 2019 +0300
+
+    +readme
+
+[1mdiff --git a/README b/README[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c15ba0c[m
+[1m--- /dev/null[m
+[1m+++ b/README[m
+[36m@@ -0,0 +1,14 @@[m
+[32m+[m[32mIn this exercise we placed several beacons in the world. Your task is to stear the quadrotor through each of them. The order in which you pass through the beacons does not matter. Instead of flying manually we provide a simple interface to specify a series of motion commands.[m
+[32m+[m
+[32m+[m[32mBelow the simulation window is a python code editor where you can define the motion commands inside the plan_mission function. Create a list of motion commands using the following functions defined in the quadrotor.command package.[m
+[32m+[m
+[32m+[m[32mforward(x) - move x meters forward[m
+[32m+[m[32mbackward(x) - move x meters backward[m
+[32m+[m[32mleft(x) - move x meters to the left[m
+[32m+[m[32mright(x) - move x meters to the right[m
+[32m+[m[32mup(x) - move x meters up[m
+[32m+[m[32mdown(x) - move x meters down[m
+[32m+[m[32mturn_left(x) - turn x degrees to the left[m
+[32m+[m[32mturn_right(x) - turn x degrees to the right[m
+[32m+[m[32mAfterwards add the commands to the mission using mission.add_commands(commands).[m
+[32m+[m
+
+[33mcommit 94fa75b907b30fbd59f678bdd86d48018166fa7c[m
+Author: Ilvif666 <ilvif666@gmail.com>
+Date:   Tue Feb 5 20:44:58 2019 +0300
+
+    initial project version
+
+[1mdiff --git a/QTP.py b/QTP.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..646685f[m
+[1m--- /dev/null[m
+[1m+++ b/QTP.py[m
+[36m@@ -0,0 +1,21 @@[m
+[32m+[m[32mimport quadrotor.command as cmd[m
+[32m+[m[32mfrom math import sqrt[m
+[32m+[m
+[32m+[m[32mdef plan_mission(mission):[m
+[32m+[m
+[32m+[m[32m    # this is an example illustrating the different motion commands,[m
+[32m+[m[32m    # replace them with your own commands and activate all beacons[m
+[32m+[m[32m    commands  = [[m
+[32m+[m[32m        cmd.up(1),[m
+[32m+[m[32m        cmd.turn_left(90-26.57),[m
+[32m+[m[32m        cmd.forward(sqrt((2*0.5)**2+(4*0.5)**2)),[m
+[32m+[m[32m        cmd.turn_right(90-26.57),[m
+[32m+[m[32m        cmd.forward(4),[m
+[32m+[m[32m        cmd.right(2),[m
+[32m+[m[32m        cmd.backward(4),[m
+[32m+[m[32m        cmd.right(2),[m
+[32m+[m[32m        cmd.forward(4),[m
+[32m+[m[32m        cmd.turn_left(45),[m
+[32m+[m[32m    ][m
+[32m+[m
+[32m+[m[32m    mission.add_commands(commands)[m
