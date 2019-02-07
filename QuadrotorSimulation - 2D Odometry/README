@@ -1,0 +1,7 @@
+computing the current position of the quadrotor by integrating its velocity measurements over time and plotting trajectory 
+
+Used the plot_trajectory function to visualize the estimated position. The first parameter is the name of the trajectory. The second parameter is a 2 or 3 dimensional column vector containing the current x, y and optionally z position. 
+
+
+
+https://courses.edx.org/courses/course-v1:TUMx+AUTONAVx+2T2015/courseware/b25665183d4a495f879526eff50b9068/620b86a76124415698af9e8b0c6793c6/5?activate_block_id=block-v1%3ATUMx%2BAUTONAVx%2B2T2015%2Btype%40html%2Bblock%40c6bd95ab7a4b4f3497ebf53ca77446da 
