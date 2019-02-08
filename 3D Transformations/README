@@ -1,0 +1,16 @@
+In this exercise goal is to compute the position of the quadrotor from 
+observations of visual markers. The markers are detected in images 
+recorded from the downfacing camera of the quadrotor. We also assume the 
+position of the markers in the world are known.
+
+The following image illustrates the relations between the the world, 
+quadrotor and marker coordinate frames. 
+https://prod-edxapp.edx-cdn.org/assets/courseware/v1/4a4bb3f6f470897326d4eaa5d4658403/asset-v1:TUMx+AUTONAVx+2T2015+type@asset+block/exercise32_world_drone_marker_coords3.png 
+The transformations from the world to the marker Tmw and from the 
+quadrotor to the marker Tmq are known. Task is to compute the 
+transformation from the world to the quadrotor Tqw given the two other 
+transformations.  Function compute_drone_pose parameters are the 
+global marker pose and the observed marker pose . Both are instances of 
+the Pose3D class. And it returns quadrotor Tqw transformation.
+
+https://courses.edx.org/courses/course-v1:TUMx+AUTONAVx+2T2015/courseware/02528ea20b3444abb2017036e11c5907/254ee672de4e4fcc9504c6ad2806a48d/?child=last
