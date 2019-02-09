@@ -1,0 +1,5 @@
+Simple implementation of a PD controller to move a point mass to a desired position by exerting a force. The system can be described by the following equations: x(t) = dt*v(t-1); v(t) = dt*a(t-1); a(t) = F/m; F = u(t). Where x is the position, v - the velocity, a - the acceleration, m - a fixed mass,  F - the exerted force, and  u - the control command computed by the PD controller.
+
+Implemented PD controller in the method compute_control_command. Its input is the current position x(t) and the desired position in meters. The method returns the control command u(t). The controller gains tuned to achieve stability within 10s and without overshooting more than 1m.
+
+https://courses.edx.org/courses/course-v1:TUMx+AUTONAVx+2T2015/courseware/655de95faab6403aaae97f4bd4293377/a22bbaf5683647d98776449adcf0760b/1?activate_block_id=block-v1%3ATUMx%2BAUTONAVx%2B2T2015%2Btype%40vertical%2Bblock%40d307a6c1a7324ff7ad76cb829d36f4b0
