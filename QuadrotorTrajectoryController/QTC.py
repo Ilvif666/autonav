@@ -10,16 +10,15 @@ class UserCode:
         # TODO: tune gains
     
         # xy control gains
-        Kp_xy = 0.9 # xy proportional
+        Kp_xy = 1.0 # xy proportional
         Kd_xy = 0.2 # xy differential
         
         # height control gains
-        Kp_z  = 0.35 # z proportional
+        Kp_z  = 0.45 # z proportional
         Kd_z  = 0.15 # z differential
         
         self.Kp = np.array([[Kp_xy, Kp_xy, Kp_z]]).T
         self.Kd = np.array([[Kd_xy, Kd_xy, Kd_z]]).T
-        self.vel_error = np.zeros((3,1))
         self.Kp_xy = Kp_xy
         self.Kd_xy = Kd_xy
         self.Kp_z = Kp_z
@@ -39,8 +38,8 @@ class UserCode:
         # TODO: implement PID controller computing u from state and state_desired
         u = np.zeros((3,1))
         error = state_desired.position - state.position
-        de = error - self.vel_error
-        u = self.Kp_xy * error + self.Kd * de/dt
+        d = state_desired.velocity - state.velocity
+        u = self.Kp_xy * error + self.Kd * d
         self.vel_error = error        
         return u
         
