@@ -1,23 +1,28 @@
+'''
+in this exercise you are given the time series of a (stationary) quadrotor equipped with a GPS receiver.
+
+Please calculate the statistics with numpy.
+'''
 import numpy as np
 
 def compute_means(lat,lon,alt):
     # TODO: implement mean computation
-    mean_lat = None
-    mean_lon = None
-    mean_alt = None
+    mean_lat = np.mean(lat)
+    mean_lon = np.mean(lon)
+    mean_alt = np.mean(alt)
     return (mean_lat,mean_lon,mean_alt)
 
 def compute_vars(lat,lon,alt):
     # TODO: implement variance computation
-    var_lat = None
-    var_lon = None
-    var_alt = None
+    var_lat = np.var(lat)
+    var_lon = np.var(lon)
+    var_alt = np.var(alt)
     return (var_lat,var_lon,var_alt)
 
 def compute_cov(lat,lon,alt):
     # TODO: implement covariance computation
     
-    cov_lat_lon = None
-    cov_lon_alt = None
-    cov_lat_alt = None
+    cov_lat_lon = np.cov(lat, lon)
+    cov_lon_alt = np.cov(lon,alt)
+    cov_lat_alt = np.cov(lat,alt)
     return (cov_lat_lon,cov_lon_alt,cov_lat_alt)
