@@ -1,0 +1,6 @@
+5th homework 
+https://courses.edx.org/courses/course-v1:TUMx+AUTONAVx+2T2015/courseware/773bd335acd24bfe92ed918d6a153321/9255b6e1dd01471ebee3d21cbe62a30a/?child=first 
+statistics.py - computation of sample mean, variance and standard 
+deviation statistics_with_numpy.py - statistics calculations using numpy 
+(variance, mean, covariance) of the time series of a quadrotor equipped 
+with a GPS receiver (latitude, longtitude, altitude)
