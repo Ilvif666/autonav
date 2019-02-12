@@ -1,0 +1,5 @@
+6th homework: In this exercise you will implement your own Kalman filter 
+to correct noisy sensor measurements. The output of the Kalman filter 
+will be fed into a PD controller to guide the quadrotor along a square 
+trajectory. 
+https://courses.edx.org/courses/course-v1:TUMx+AUTONAVx+2T2015/courseware/13bcea597a12481ebf078e255a251115/f13c6f3fe45d4b3b9fca06f9ac0c6445/?child=first
