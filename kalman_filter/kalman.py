@@ -41,8 +41,7 @@ class UserCode:
         '''
         
         #TODO: Predict the next state
-        x_p = np.zeros((4,1))
-        
+        x_p = np.dot(A,x)
         return x_p
     
     def predictCovariance(self, A, sigma, Q):
@@ -63,8 +62,8 @@ class UserCode:
         '''
         
         #TODO: Correct the current state prediction with the measurement
-        x = np.zeros((4,1))
-
+        x = x_p + np.dot(k,(z-np.dot(H,x_p)))
+        
         return x
     
     def correctCovariance(self, sigma_p, k, H):
@@ -95,4 +94,3 @@ class UserCode:
         # visualize position state
         plot_trajectory("kalman", self.x[0:2])
         plot_covariance_2d("kalman", self.sigma[0:2,0:2])
-
