@@ -16,7 +16,7 @@ class UserCode:
         ]) 
         
         #measurement noise
-        z_pos_noise_std = 0.005
+        z_pos_noise_std = 0.03
         z_yaw_noise_std = 0.03
         self.R = np.array([
             [z_pos_noise_std*z_pos_noise_std,0,0],
@@ -110,7 +110,7 @@ class UserCode:
         '''
         
         # TODO: implement correction of predicted state x_predicted
-            
+        x_predicted = x_predicted + np.dot(K,(z - z_predicted))
         return x_predicted
     
     def correctCovariance(self, sigma_p, K, H):
@@ -139,8 +139,9 @@ class UserCode:
         '''
         
         # TODO: implement computation of H
-        
-        return np.zeros((3,3))
+        x_m, y_m = marker_position_world[0], marker_position_world[1]
+        H  = np.array([[-math.cos(x[2]),-math.sin(x[2]),-math.sin(x[2])*(x_m - x[0])+math.cos(x[2])*(y_m - x[1])],[math.sin(x[2]),-math.cos(x[2]),-math.cos(x[2])*(x_m-x[0])-math.sin(x[2])*(y_m-x[1])],[0,0,-1]])
+        return H
     
     def state_callback(self, t, dt, linear_velocity, yaw_velocity):
         '''
@@ -210,5 +211,3 @@ class Pose2D:
         :return - product of self and other
         '''
         return Pose2D(np.dot(self.rotation, other.rotation), np.dot(self.rotation, other.translation) + self.translation)
-
-
