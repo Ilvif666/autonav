@@ -1,0 +1,5 @@
+hw 7th task, goal is to fly along a square trajectory.There was already 
+provided a framework for the EKF (extended kalman filter). The prediction 
+steps have already been implemented. Task is to implement 
+calculatePredictMeasurementJacobian and correctState methods. 
+https://courses.edx.org/courses/course-v1:TUMx+AUTONAVx+2T2015/courseware/b6f17cd5224f43d8a29aca3dcbc15902/30e753449e644ab3870259405379318d/1?activate_block_id=block-v1%3ATUMx%2BAUTONAVx%2B2T2015%2Btype%40vertical%2Bblock%40d2631dbd43094c3f9b206157452d64cd
