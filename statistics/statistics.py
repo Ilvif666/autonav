@@ -16,5 +16,6 @@ def sample_variance(list):
 def standard_deviation(list):
 	return sqrt(sample_variance(list))
 
+
 data = [-1, 2, 3, 1, 1]
 print(sample_mean(data),sample_variance(data),standard_deviation(data))

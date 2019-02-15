@@ -22,7 +22,7 @@ def compute_vars(lat,lon,alt):
 def compute_cov(lat,lon,alt):
     # TODO: implement covariance computation
     
-    cov_lat_lon = np.cov(lat, lon)
+    cov_lat_lon = np.cov(lat,lon)
     cov_lon_alt = np.cov(lon,alt)
     cov_lat_alt = np.cov(lat,alt)
     return (cov_lat_lon,cov_lon_alt,cov_lat_alt)

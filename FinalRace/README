@@ -1,0 +1,20 @@
+Homework week 8 final task 
+
+In this final exercise you have to fly again through a series of beacons. In contrast to previous exercises, we only provide you with the raw odometry measurements and marker observations from the quadrotor. You will have to implement:
+
+marker placement and path planning (exercise week 1),
+position controller (exercise week 4), and
+state estimation (exercise week 6 and 7).
+The goal of this exercise is to bring all together, so please make use of the solutions from these previous weeks. To support localization of the quadrotor you can place up to 30 markers in the world. Once you activated all beacons the simulation stops and you can submit your time. It has to be below 300s of simulation time  to get credits. We encourage you to post screenshots of your best time (and possibly your trajectory and map) in the discussion forum below.
+
+Code
+The UserCode class contains three methods, which will be called by external code.
+
+get_markers returns an array of the desired x, y marker positions. The array can contain up to 30 marker positions. Each marker position is represented as an array of two numbers. Have a look at the example in the default code.
+
+state_callback is called when new odometry measurements arrive. The arguments are the current time, time difference since the last call, noisy linear velocity measurements in the local quadrotor coordinate frame, and a noisy estimate of the yaw velocity.
+
+measurement_callback is invoked when the quadrotor observes a marker. Its arguments are the x and y position and yaw in woorld coordinates, and the x and y marker position and yaw relative to the quadrotor.
+
+
+https://courses.edx.org/courses/course-v1:TUMx+AUTONAVx+2T2015/courseware/9ed759fd1d204c9c92127d897522995a/a85523d4ec304fb5984017a90092fd25/1?activate_block_id=block-v1%3ATUMx%2BAUTONAVx%2B2T2015%2Btype%40vertical%2Bblock%4087140192594641d0a277eab131a32f75
